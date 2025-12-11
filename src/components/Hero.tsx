@@ -114,7 +114,7 @@ export const Hero = () => {
                             transition={{ duration: 0.8, delay: 0.5 }}
                             className="text-sm md:text-base text-muted-foreground/80 max-w-xl mx-auto lg:mx-0 mb-8"
                         >
-                            From North Macedonia. I craft clean, efficient code and transform complex problems into elegant solutions.
+                            From <strong>Macedonia.</strong> I craft clean, efficient code and transform complex problems into elegant solutions.
                         </motion.p>
 
                         {/* CTA Buttons */}
