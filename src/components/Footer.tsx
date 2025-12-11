@@ -38,7 +38,7 @@ export const Footer = () => {
                             <Github size={18} />
                         </a>
                         <a
-                            href="https://linkedin.com"
+                            href="https://www.linkedin.com/in/andrej-gruevski-876501269/"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="w-10 h-10 rounded-lg border border-border flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary/50 transition-colors"
@@ -46,7 +46,7 @@ export const Footer = () => {
                             <Linkedin size={18} />
                         </a>
                         <a
-                            href="mailto:andrej@example.com"
+                            href="mailto:andrejgruevski1@gmail.com"
                             className="w-10 h-10 rounded-lg border border-border flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary/50 transition-colors"
                         >
                             <Mail size={18} />

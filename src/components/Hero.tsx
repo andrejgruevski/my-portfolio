@@ -162,7 +162,7 @@ export const Hero = () => {
                                 <Github size={22} />
                             </a>
                             <a
-                                href="https://linkedin.com"
+                                href="https://www.linkedin.com/in/andrej-gruevski-876501269/"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="text-muted-foreground hover:text-primary transition-colors"
@@ -170,7 +170,7 @@ export const Hero = () => {
                                 <Linkedin size={22} />
                             </a>
                             <a
-                                href="mailto:andrej@example.com"
+                                href="mailto:andrejgruevski1@gmail.com"
                                 className="text-muted-foreground hover:text-primary transition-colors"
                             >
                                 <Mail size={22} />
