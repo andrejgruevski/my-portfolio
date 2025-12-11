@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import profileImage from '@/assets/profile.jpg';
 
 const TypingText = () => {
-    const fullText = "I'm Andrej Gruevski, a Full-Stack Developer and AI Enthusiast";
+    const fullText = "I'm Andrej Gruevski, a Full-Stack Developer";
     const [displayedText, setDisplayedText] = useState('');
     const [currentIndex, setCurrentIndex] = useState(0);
     const [showCursor, setShowCursor] = useState(true);
