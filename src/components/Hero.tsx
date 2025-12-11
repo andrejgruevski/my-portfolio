@@ -112,13 +112,13 @@ export const Hero = () => {
                             className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mb-8"
                         >
                             <a
-                                href="#projects"
+                                href="/projects"
                                 className="bg-gradient-primary text-primary-foreground px-8 py-4 rounded-xl font-medium hover:opacity-90 transition-all glow-primary w-full sm:w-auto text-center"
                             >
                                 View My Work
                             </a>
                             <a
-                                href="#contact"
+                                href="/contact"
                                 className="glass glass-hover px-8 py-4 rounded-xl font-medium text-foreground w-full sm:w-auto text-center"
                             >
                                 Get In Touch
@@ -188,7 +188,7 @@ export const Hero = () => {
                     transition={{ duration: 1, delay: 1 }}
                     className="absolute bottom-8 left-1/2 -translate-x-1/2"
                 >
-                    <a href="#about" className="flex flex-col items-center gap-2 text-muted-foreground hover:text-primary transition-colors">
+                    <a href="/about" className="flex flex-col items-center gap-2 text-muted-foreground hover:text-primary transition-colors">
                         <span className="text-xs tracking-widest uppercase">Scroll</span>
                         <ArrowDown size={18} className="animate-bounce" />
                     </a>

@@ -47,7 +47,7 @@ export const Navbar = () => {
             </a>
           ))}
           <a
-            href="#contact"
+            href="/contact"
             className="bg-gradient-primary text-primary-foreground px-5 py-2.5 rounded-lg font-medium text-sm hover:opacity-90 transition-opacity"
           >
             Let's Talk
@@ -83,7 +83,7 @@ export const Navbar = () => {
               </a>
             ))}
             <a
-              href="#contact"
+              href="/contact"
               onClick={() => setIsMobileMenuOpen(false)}
               className="bg-gradient-primary text-primary-foreground px-5 py-3 rounded-lg font-medium text-center mt-2"
             >
