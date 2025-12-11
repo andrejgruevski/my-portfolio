@@ -1,7 +1,20 @@
 import { motion } from 'framer-motion';
 import { ArrowDown, Github, Linkedin, Mail } from 'lucide-react';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import profileImage from '@/assets/profile.jpg';
+
+const scrollToSection = (href: string) => {
+    const targetId = href.replace('#', '');
+    const targetElement = document.getElementById(targetId);
+
+    if (targetElement) {
+        const offsetTop = targetElement.offsetTop - 80;
+        window.scrollTo({
+            top: offsetTop,
+            behavior: 'smooth'
+        });
+    }
+};
 
 const TypingText = () => {
     const fullText = "I'm Andrej Gruevski, a Full-Stack Developer";
@@ -112,13 +125,21 @@ export const Hero = () => {
                             className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mb-8"
                         >
                             <a
-                                href="/projects"
+                                href="#projects"
+                                onClick={(e) => {
+                                    e.preventDefault();
+                                    scrollToSection('#projects');
+                                }}
                                 className="bg-gradient-primary text-primary-foreground px-8 py-4 rounded-xl font-medium hover:opacity-90 transition-all glow-primary w-full sm:w-auto text-center"
                             >
                                 View My Work
                             </a>
                             <a
-                                href="/contact"
+                                href="#contact"
+                                onClick={(e) => {
+                                    e.preventDefault();
+                                    scrollToSection('#contact');
+                                }}
                                 className="glass glass-hover px-8 py-4 rounded-xl font-medium text-foreground w-full sm:w-auto text-center"
                             >
                                 Get In Touch
@@ -188,7 +209,14 @@ export const Hero = () => {
                     transition={{ duration: 1, delay: 1 }}
                     className="absolute bottom-8 left-1/2 -translate-x-1/2"
                 >
-                    <a href="/about" className="flex flex-col items-center gap-2 text-muted-foreground hover:text-primary transition-colors">
+                    <a
+                        href="#about"
+                        onClick={(e) => {
+                            e.preventDefault();
+                            scrollToSection('#about');
+                        }}
+                        className="flex flex-col items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
+                    >
                         <span className="text-xs tracking-widest uppercase">Scroll</span>
                         <ArrowDown size={18} className="animate-bounce" />
                     </a>
