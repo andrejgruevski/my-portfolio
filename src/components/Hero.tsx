@@ -1,9 +1,10 @@
 import { motion } from 'framer-motion';
 import { ArrowDown, Github, Linkedin, Mail } from 'lucide-react';
 import { useEffect, useState } from 'react';
+import profileImage from '@/assets/profile.jpg';
 
 const TypingText = () => {
-    const fullText = "I'm Andrej Gruevski, a Full-Stack Developer";
+    const fullText = "I'm Andrej Gruevski, a Full-Stack Developer and AI Enthusiast";
     const [displayedText, setDisplayedText] = useState('');
     const [currentIndex, setCurrentIndex] = useState(0);
     const [showCursor, setShowCursor] = useState(true);
@@ -99,7 +100,8 @@ export const Hero = () => {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, delay: 0.5 }}
                             className="text-sm md:text-base text-muted-foreground/80 max-w-xl mx-auto lg:mx-0 mb-8"
-                        >From <strong>Macedonia</strong>. I craft clean, efficient code and transform complex problems into elegant solutions.
+                        >
+                            From North Macedonia. I craft clean, efficient code and transform complex problems into elegant solutions.
                         </motion.p>
 
                         {/* CTA Buttons */}
@@ -168,20 +170,9 @@ export const Hero = () => {
                         {/* Image container */}
                         <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden border-4 border-primary/20 shadow-2xl shadow-primary/20">
                             <img
-                                src="src/assets/profile.jpg"
+                                src={profileImage}
                                 alt="Andrej Gruevski - Full-Stack Developer"
                                 className="w-full h-full object-cover"
-                                onError={(e) => {
-                                    // Fallback placeholder if image doesn't exist
-                                    e.currentTarget.src = 'data:image/svg+xml,' + encodeURIComponent(`
-                    <svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400">
-                      <rect fill="#1a1a2e" width="400" height="400"/>
-                      <circle cx="200" cy="140" r="60" fill="#0ea5e9" opacity="0.3"/>
-                      <ellipse cx="200" cy="320" rx="100" ry="80" fill="#0ea5e9" opacity="0.3"/>
-                      <text x="200" y="210" text-anchor="middle" fill="#0ea5e9" font-family="sans-serif" font-size="14">Add your photo</text>
-                    </svg>
-                  `);
-                                }}
                             />
                         </div>
 
