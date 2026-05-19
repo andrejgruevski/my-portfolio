@@ -183,7 +183,7 @@ export const Hero = () => {
                         initial={{ opacity: 0, scale: 0.8 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 1, delay: 0.4, ease: 'easeOut' }}
-                        className="relative flex-shrink-0 translate-y-8"
+                        className="relative flex-shrink-0 translate-y-12"
                     >
                         {/* Glow effect behind image */}
                         <div className="absolute inset-0 bg-gradient-primary rounded-full blur-2xl opacity-30 scale-110" />
