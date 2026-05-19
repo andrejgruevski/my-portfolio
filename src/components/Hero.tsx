@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { ArrowDown, Github, Linkedin, Mail } from 'lucide-react';
 import { useEffect, useState, useCallback } from 'react';
-import profileImage from '@/assets/profile.jpg';
+import profileImage from '@/assets/profile.JPG';
 
 const scrollToSection = (href: string) => {
     const targetId = href.replace('#', '');
