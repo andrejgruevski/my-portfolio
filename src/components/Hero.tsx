@@ -190,6 +190,9 @@ export const Hero = () => {
                             <img
                                 src={profileImage}
                                 alt="Andrej Gruevski - Full-Stack Developer"
+                                width={768}
+                                height={768}
+                                decoding="async"
                                 className="w-full h-full object-cover"
                             />
                         </div>
