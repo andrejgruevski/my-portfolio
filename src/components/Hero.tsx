@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { ArrowDown, Github, Linkedin, Mail } from 'lucide-react';
-import { useEffect, useState, useCallback } from 'react';
+import { useEffect, useState } from 'react';
 import profileImage from '@/assets/profile.jpg';
 
 const scrollToSection = (href: string) => {
