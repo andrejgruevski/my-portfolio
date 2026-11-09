@@ -1,41 +1,53 @@
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 import { ArrowDown, Github, Linkedin, Mail } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import profileImage from '@/assets/profile.jpg';
 
+const TYPING_TEXT = "I'm Andrej Gruevski, a Full-Stack Developer";
+
 const TypingText = () => {
-    const fullText = "I'm Andrej Gruevski, a Full-Stack Developer";
-    const [displayedText, setDisplayedText] = useState('');
-    const [currentIndex, setCurrentIndex] = useState(0);
+    const shouldReduceMotion = useReducedMotion();
+    const [displayedText, setDisplayedText] = useState(shouldReduceMotion ? TYPING_TEXT : '');
+    const [currentIndex, setCurrentIndex] = useState(shouldReduceMotion ? TYPING_TEXT.length : 0);
     const [showCursor, setShowCursor] = useState(true);
 
     useEffect(() => {
-        if (currentIndex < fullText.length) {
+        if (shouldReduceMotion) {
+            setDisplayedText(TYPING_TEXT);
+            setCurrentIndex(TYPING_TEXT.length);
+            return;
+        }
+
+        if (currentIndex < TYPING_TEXT.length) {
             const timeout = setTimeout(() => {
-                setDisplayedText(prev => prev + fullText[currentIndex]);
+                setDisplayedText(prev => prev + TYPING_TEXT[currentIndex]);
                 setCurrentIndex(prev => prev + 1);
             }, 50); // Typing speed - 50ms per character
             return () => clearTimeout(timeout);
         }
-    }, [currentIndex, fullText]);
+    }, [currentIndex, shouldReduceMotion]);
 
     // Blinking cursor effect
     useEffect(() => {
+        if (shouldReduceMotion) return;
+
         const cursorInterval = setInterval(() => {
             setShowCursor(prev => !prev);
         }, 530);
         return () => clearInterval(cursorInterval);
-    }, []);
+    }, [shouldReduceMotion]);
 
     return (
         <span>
-      {displayedText}
-            <span
-                className={`inline-block w-0.5 h-[1em] bg-primary ml-1 align-middle transition-opacity duration-100 ${
-                    showCursor ? 'opacity-100' : 'opacity-0'
-                }`}
-            />
-    </span>
+            {displayedText}
+            {!shouldReduceMotion && (
+                <span
+                    className={`inline-block w-0.5 h-[1em] bg-primary ml-1 align-middle transition-opacity duration-100 ${
+                        showCursor ? 'opacity-100' : 'opacity-0'
+                    }`}
+                />
+            )}
+        </span>
     );
 };
 
@@ -91,7 +103,10 @@ export const Hero = () => {
                             transition={{ duration: 0.8, delay: 0.4 }}
                             className="text-base md:text-lg text-muted-foreground max-w-xl mx-auto lg:mx-0 mb-8 leading-relaxed min-h-[3rem]"
                         >
-                            <TypingText />
+                            <span className="sr-only">{TYPING_TEXT}</span>
+                            <span aria-hidden="true">
+                                <TypingText />
+                            </span>
                         </motion.p>
 
                         {/* Description */}
@@ -136,23 +151,26 @@ export const Hero = () => {
                                 href="https://github.com/andrejgruevski"
                                 target="_blank"
                                 rel="noopener noreferrer"
+                                aria-label="GitHub profile"
                                 className="text-muted-foreground hover:text-primary transition-colors"
                             >
-                                <Github size={22} />
+                                <Github size={22} aria-hidden="true" />
                             </a>
                             <a
                                 href="https://www.linkedin.com/in/andrej-gruevski-876501269/"
                                 target="_blank"
                                 rel="noopener noreferrer"
+                                aria-label="LinkedIn profile"
                                 className="text-muted-foreground hover:text-primary transition-colors"
                             >
-                                <Linkedin size={22} />
+                                <Linkedin size={22} aria-hidden="true" />
                             </a>
                             <a
                                 href="mailto:andrejgruevski1@gmail.com"
+                                aria-label="Email Andrej Gruevski"
                                 className="text-muted-foreground hover:text-primary transition-colors"
                             >
-                                <Mail size={22} />
+                                <Mail size={22} aria-hidden="true" />
                             </a>
                         </motion.div>
                     </div>
@@ -193,7 +211,7 @@ export const Hero = () => {
                         className="flex flex-col items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
                     >
                         <span className="text-xs tracking-widest uppercase">Scroll</span>
-                        <ArrowDown size={18} className="animate-bounce" />
+                        <ArrowDown size={18} className="animate-bounce" aria-hidden="true" />
                     </a>
                 </motion.div>
             </div>

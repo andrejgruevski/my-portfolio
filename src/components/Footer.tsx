@@ -16,7 +16,7 @@ export const Footer = () => {
                             AG<span className="text-primary">.</span>
                         </a>
                         <p className="text-sm text-muted-foreground flex items-center gap-1 justify-center md:justify-start">
-                            © {currentYear} Made with <Heart size={14} className="text-primary" /> by Andrej Gruevski
+                            © {currentYear} Made with <Heart size={14} className="text-primary" aria-hidden="true" /> by Andrej Gruevski
                         </p>
                     </div>
 
@@ -26,23 +26,26 @@ export const Footer = () => {
                             href="https://github.com/andrejgruevski"
                             target="_blank"
                             rel="noopener noreferrer"
+                            aria-label="GitHub profile"
                             className="w-10 h-10 rounded-lg border border-border flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary/50 transition-colors"
                         >
-                            <Github size={18} />
+                            <Github size={18} aria-hidden="true" />
                         </a>
                         <a
                             href="https://www.linkedin.com/in/andrej-gruevski-876501269/"
                             target="_blank"
                             rel="noopener noreferrer"
+                            aria-label="LinkedIn profile"
                             className="w-10 h-10 rounded-lg border border-border flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary/50 transition-colors"
                         >
-                            <Linkedin size={18} />
+                            <Linkedin size={18} aria-hidden="true" />
                         </a>
                         <a
                             href="mailto:andrejgruevski1@gmail.com"
+                            aria-label="Email Andrej Gruevski"
                             className="w-10 h-10 rounded-lg border border-border flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary/50 transition-colors"
                         >
-                            <Mail size={18} />
+                            <Mail size={18} aria-hidden="true" />
                         </a>
                     </div>
                 </div>
