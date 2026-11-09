@@ -3,19 +3,6 @@ import { ArrowDown, Github, Linkedin, Mail } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import profileImage from '@/assets/profile.jpg';
 
-const scrollToSection = (href: string) => {
-    const targetId = href.replace('#', '');
-    const targetElement = document.getElementById(targetId);
-
-    if (targetElement) {
-        const offsetTop = targetElement.offsetTop - 80;
-        window.scrollTo({
-            top: offsetTop,
-            behavior: 'smooth'
-        });
-    }
-};
-
 const TypingText = () => {
     const fullText = "I'm Andrej Gruevski, a Full-Stack Developer";
     const [displayedText, setDisplayedText] = useState('');
@@ -54,7 +41,7 @@ const TypingText = () => {
 
 export const Hero = () => {
     return (
-        <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
+        <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
             {/* Background Elements */}
             <div className="absolute inset-0 overflow-hidden">
                 <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-glow-pulse" />
@@ -126,20 +113,12 @@ export const Hero = () => {
                         >
                             <a
                                 href="#projects"
-                                onClick={(e) => {
-                                    e.preventDefault();
-                                    scrollToSection('#projects');
-                                }}
                                 className="bg-gradient-primary text-primary-foreground px-8 py-4 rounded-xl font-medium hover:opacity-90 transition-all glow-primary w-full sm:w-auto text-center"
                             >
                                 View My Work
                             </a>
                             <a
                                 href="#contact"
-                                onClick={(e) => {
-                                    e.preventDefault();
-                                    scrollToSection('#contact');
-                                }}
                                 className="glass glass-hover px-8 py-4 rounded-xl font-medium text-foreground w-full sm:w-auto text-center"
                             >
                                 Get In Touch
@@ -211,10 +190,6 @@ export const Hero = () => {
                 >
                     <a
                         href="#about"
-                        onClick={(e) => {
-                            e.preventDefault();
-                            scrollToSection('#about');
-                        }}
                         className="flex flex-col items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
                     >
                         <span className="text-xs tracking-widest uppercase">Scroll</span>

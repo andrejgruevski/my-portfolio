@@ -57,6 +57,10 @@
     scroll-behavior: smooth;
   }
 
+  section[id] {
+    scroll-margin-top: 6rem;
+  }
+
   body {
     @apply bg-background text-foreground font-body antialiased;
     font-family: var(--font-body);

@@ -1,13 +1,7 @@
 import { Github, Linkedin, Mail, Heart } from 'lucide-react';
-import { useCallback } from 'react';
 
 export const Footer = () => {
     const currentYear = new Date().getFullYear();
-
-    const handleLogoClick = useCallback((e: React.MouseEvent<HTMLAnchorElement>) => {
-        e.preventDefault();
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    }, []);
 
     return (
         <footer className="border-t border-border py-12">
@@ -16,8 +10,7 @@ export const Footer = () => {
                     {/* Logo & Copyright */}
                     <div className="text-center md:text-left">
                         <a
-                            href="#"
-                            onClick={handleLogoClick}
+                            href="#home"
                             className="font-display text-xl font-bold mb-2 block"
                         >
                             AG<span className="text-primary">.</span>
